@@ -12,7 +12,7 @@ app.use(cors());
 const port = process.env.PORT || 8000;
 mongoose.connect("mongodb+srv://rahul:Rahulkumar1@dare2dev.rswnl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
-app.get("/api/data", (req, res) => {
+app.get("/", (req, res) => {
   res.send(`<h1>Hello from server</h1>`);
 });
 
