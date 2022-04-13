@@ -9,7 +9,7 @@ const app = express();
 app.use(express());
 app.use(express.json());
 app.use(cors());
-
+const port = process.env.PORT || 8000;
 mongoose.connect("mongodb+srv://rahul:Rahulkumar1@dare2dev.rswnl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
 app.get("/api/data", (req, res) => {
@@ -63,6 +63,6 @@ app.post("/api/register" , async(req,res) =>{
     res.json({status : "error" , error : "Duplicate Username"});
   }
 })
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log("listening on port 8000 . . .");
 });
