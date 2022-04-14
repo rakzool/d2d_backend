@@ -16,6 +16,18 @@ app.get("/", (req, res) => {
   res.send(`<h1>Hello from server</h1>`);
 });
 
+app.get("/api/teamDetails", async(req,res) => {
+
+   const team = await Teams.findOne({
+     userName : req.query.userName
+   });
+
+  
+
+   res.send(team);
+   res.end();
+})
+
 app.post("/api/login" , async(req,res) => {
   const team = await Teams.findOne({
     userName : req.body.email,
